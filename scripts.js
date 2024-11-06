@@ -27,11 +27,11 @@ function createRainDrop() {
     rainDrop.classList.add('rain-drop');
 
     // Posición horizontal aleatoria
-    rainDrop.style.left = `${Math.random() * 100}vw`;
+    rainDrop.style.left = `${Math.random() * 1000}vw`;
     // Duración de la animación aleatoria para que las gotas caigan a diferentes velocidades
-    rainDrop.style.animationDuration = `${Math.random() * 2 + 1}s`;
+    rainDrop.style.animationDuration = `${Math.random() * 20 + 10}s`;
     // Tamaño aleatorio para cada gota
-    rainDrop.style.height = `${Math.random() * 15 + 5}px`;
+    rainDrop.style.height = `${Math.random() * 150 + 50}px`;
 
     // Añadir la gota al contenedor
     rainContainer.appendChild(rainDrop);
