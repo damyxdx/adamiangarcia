@@ -41,7 +41,7 @@ a {
     padding: 1rem;
     position: relative;
     z-index: 2;
-    box-shadow: 0 10px 10px rgba(138, 43, 226, 0.5); /* Sombra violeta */
+    
 }
 
 .terminal-header {
