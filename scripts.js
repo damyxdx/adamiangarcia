@@ -22,23 +22,20 @@ document.addEventListener("DOMContentLoaded", function() {
     // Selecciona el contenedor de lluvia
     const rainContainer = document.querySelector('.rain-container');
 
-    // Función para crear gotas de lluvia con colores RGB aleatorios
+    // Función para crear gotas de lluvia
     function createRainDrop() {
         const rainDrop = document.createElement('div');
         rainDrop.classList.add('rain-drop');
 
-        // Posición horizontal aleatoria
+        // Posición horizontal aleatoria (para dispersarlas por toda la pantalla)
         rainDrop.style.left = `${Math.random() * 100}vw`;
-        // Duración de la animación aleatoria
-        rainDrop.style.animationDuration = `${Math.random() * 1.5 + 0.5}s`;
-        // Tamaño aleatorio
-        rainDrop.style.height = `${Math.random() * 15 + 5}px`;
+        // La animación será constante, duración fija para todas las gotas
+        rainDrop.style.animationDuration = `1.5s`; 
+        // Tamaño fijo para las gotas
+        rainDrop.style.height = `10px`;
 
-        // Color RGB aleatorio
-        const r = Math.floor(Math.random() * 256);
-        const g = Math.floor(Math.random() * 256);
-        const b = Math.floor(Math.random() * 256);
-        rainDrop.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 0.8)`;
+        // Color fijo para las gotas (en un tono blanco suave)
+        rainDrop.style.backgroundColor = `rgba(255, 255, 255, 0.5)`; 
 
         // Añadir la gota al contenedor
         rainContainer.appendChild(rainDrop);
@@ -49,6 +46,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Generar gotas de lluvia continuamente
-    setInterval(createRainDrop, 100);
+    // Generar gotas de lluvia continuamente con un intervalo constante
+    setInterval(createRainDrop, 100);  // Genera gotas cada 100ms
 });
