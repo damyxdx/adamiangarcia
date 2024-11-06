@@ -22,32 +22,33 @@ document.addEventListener("DOMContentLoaded", function() {
     // Selecciona el contenedor de lluvia
     const rainContainer = document.querySelector('.rain-container');
 
-    // Verificar si el contenedor de lluvia existe
-    if (rainContainer) {
-        // Función para crear una gota de lluvia
-        function createRainDrop() {
-            const rainDrop = document.createElement('div');
-            rainDrop.classList.add('rain-drop');
+    // Función para crear gotas de lluvia con colores RGB aleatorios
+    function createRainDrop() {
+        const rainDrop = document.createElement('div');
+        rainDrop.classList.add('rain-drop');
 
-            // Posición horizontal aleatoria (0 a 100vw)
-            rainDrop.style.left = `${Math.random() * 100}vw`;
-            // Duración de la animación aleatoria para que las gotas caigan a diferentes velocidades
-            rainDrop.style.animationDuration = `${Math.random() * 1.5 + 0.5}s`;
-            // Tamaño aleatorio para cada gota
-            rainDrop.style.height = `${Math.random() * 15 + 5}px`;
+        // Posición horizontal aleatoria
+        rainDrop.style.left = `${Math.random() * 100}vw`;
+        // Duración de la animación aleatoria
+        rainDrop.style.animationDuration = `${Math.random() * 1.5 + 0.5}s`;
+        // Tamaño aleatorio
+        rainDrop.style.height = `${Math.random() * 15 + 5}px`;
 
-            // Añadir la gota al contenedor
-            rainContainer.appendChild(rainDrop);
+        // Color RGB aleatorio
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        rainDrop.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 0.8)`;
 
-            // Elimina la gota una vez termine la animación para evitar sobrecargar la página
-            rainDrop.addEventListener('animationend', () => {
-                rainDrop.remove();
-                // Llama de nuevo a la función para continuar generando gotas
-                createRainDrop();
-            });
-        }
+        // Añadir la gota al contenedor
+        rainContainer.appendChild(rainDrop);
 
-        // Generar gotas de lluvia continuamente
-        setInterval(createRainDrop, 100);
+        // Elimina la gota una vez termine la animación
+        rainDrop.addEventListener('animationend', () => {
+            rainDrop.remove();
+        });
     }
+
+    // Generar gotas de lluvia continuamente
+    setInterval(createRainDrop, 100);
 });
