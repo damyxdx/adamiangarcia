@@ -41,7 +41,7 @@ a {
     padding: 1rem;
     position: relative;
     z-index: 2;
-    box-shadow: 0 4px 8px rgba(148, 0, 211, 0.3); /* Sombra violeta */
+    box-shadow: 0 8px 16px rgba(148, 0, 211, 0.6); /* Sombra violeta aplicada solo al contenedor de la terminal */
 }
 
 .terminal-header {
@@ -94,7 +94,7 @@ h1, h2, p {
     background-color: #222;
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(148, 0, 211, 0.3); /* Sombra violeta */
+    /* No sombra en las tarjetas, solo en el contenedor principal */
 }
 
 .category-title {
