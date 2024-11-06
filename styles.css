@@ -27,8 +27,6 @@ a {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    background: url('path-to-your-noise.png');
-    opacity: 0.04;
     z-index: 1;
 }
 
