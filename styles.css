@@ -130,9 +130,9 @@ h1:hover, h2:hover, h3:hover, h4:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
+    pointer-events: none; /* Permite interactuar con el contenido */
     overflow: hidden;
-    z-index: -1;
+    z-index: -1; /* Coloca la lluvia detrás del contenido */
 }
 
 /* Estilos para cada gota de lluvia */
@@ -140,14 +140,15 @@ h1:hover, h2:hover, h3:hover, h4:hover {
     position: absolute;
     bottom: 100%;
     width: 2px;
-    height: 10px;
-    animation: fall linear infinite;
+    height: 10px; /* Tamaño constante de la gota */
+    animation: fall linear infinite; /* Caída continua */
     opacity: 0.8;
 }
 
-/* Animación de caída */
+/* Animación de caída (cae siempre de arriba hacia abajo) */
 @keyframes fall {
     to {
-        transform: translateY(100vh);
+        transform: translateY(100vh); /* La gota cae hasta la parte inferior de la pantalla */
     }
 }
+
