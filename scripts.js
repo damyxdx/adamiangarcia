@@ -19,33 +19,45 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Selecciona el contenedor de lluvia
+  document.addEventListener("DOMContentLoaded", function() {
+    const commands = document.querySelectorAll(".command");
+    let delay = 0;
+
+    commands.forEach((command) => {
+        delay += 300;
+        setTimeout(() => {
+            command.style.opacity = 1;
+        }, delay);
+    });
+
+    const links = document.querySelectorAll("a");
+    links.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.open(link.href, '_blank');
+        });
+    });
+
     const rainContainer = document.querySelector('.rain-container');
 
-    // Función para crear gotas de lluvia
+    // Generar gotas de lluvia de manera uniforme al inicio
+    const initialRainDrops = 50;
+    for (let i = 0; i < initialRainDrops; i++) {
+        createRainDrop();
+    }
+
     function createRainDrop() {
         const rainDrop = document.createElement('div');
         rainDrop.classList.add('rain-drop');
-
-        // Posición horizontal aleatoria (para dispersarlas por toda la pantalla)
         rainDrop.style.left = `${Math.random() * 100}vw`;
-        // La animación será constante, duración fija para todas las gotas
-        rainDrop.style.animationDuration = `1.5s`; 
-        // Tamaño fijo para las gotas
+        rainDrop.style.animationDuration = `1.5s`;
         rainDrop.style.height = `10px`;
-
-        // Color fijo para las gotas (en un tono blanco suave)
-        rainDrop.style.backgroundColor = `rgba(255, 255, 255, 0.5)`; 
-
-        // Añadir la gota al contenedor
+        rainDrop.style.backgroundColor = `rgba(255, 255, 255, 0.5)`;
         rainContainer.appendChild(rainDrop);
 
-        // Elimina la gota una vez termine la animación
         rainDrop.addEventListener('animationend', () => {
             rainDrop.remove();
+            createRainDrop(); // Crear una nueva gota una vez termine la animación
         });
     }
-
-    // Generar gotas de lluvia continuamente con un intervalo constante
-    setInterval(createRainDrop, 100);  // Genera gotas cada 100ms
 });
