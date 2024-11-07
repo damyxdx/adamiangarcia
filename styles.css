@@ -123,12 +123,7 @@ h1:hover, h2:hover, h3:hover, h4:hover {
     color: #03a9f4;
 }
 
-.background-rain {
-    background-image: url('path-to-rain-image.png'); /* Usa una imagen de lluvia ligera y simple */
-    background-repeat: repeat; /* Repetir la imagen para cubrir la pantalla */
-    background-size: cover;
-    animation: none; /* Elimina animaciones adicionales */
-}
+
 .project-grid {
     display: flex;
     flex-direction: column;
