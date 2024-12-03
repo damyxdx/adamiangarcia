@@ -1,6 +1,6 @@
 # Damian Alberto García - Portafolio Personal
 
-🚀 **Portafolio interactivo y moderno** que combina diseño gráfico y desarrollo Full Stack. Muestra mis habilidades, experiencia, educación y proyectos en un entorno inspirado en una terminal retro. Visítalo en [tu-enlace.github.io](https://tu-enlace.github.io/).
+🚀 **Portafolio interactivo y moderno** que combina diseño gráfico y desarrollo Full Stack. Muestra mis habilidades, experiencia, educación y proyectos en un entorno inspirado en una terminal retro. Visítalo en https://damyxdx.github.io/adamiangarcia/
 
 ---
 
